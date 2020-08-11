@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginBottom="21dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:fabCustomSize="80dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="80dp"
+        app:srcCompat="@drawable/home" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/profile_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="21dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:fabCustomSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="80dp"
+        app:srcCompat="@drawable/profile" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cart_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:fabCustomSize="80dp"
+        app:fabSize="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/shopping_cart" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="410dp"
+        android:layout_height="160dp"
+        android:background="#798FCF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="145dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:srcCompat="@drawable/nshop" />
+
+    <ImageButton
+        android:id="@+id/black_mask_img"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/mask_black" />
+
+    <ImageButton
+        android:id="@+id/blue_mask_img"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="29dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/mask" />
+
+    <ImageButton
+        android:id="@+id/blue_mask_img2"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="21dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_mask_btn"
+        app:srcCompat="@drawable/mask_purple" />
+
+    <Button
+        android:id="@+id/black_mask_btn"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:text="@string/black_mask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/black_mask_img" />
+
+    <Button
+        android:id="@+id/blue_mask_btn"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:text="@string/blue_mask"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_mask_img" />
+
+    <Button
+        android:id="@+id/purple_mask"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:text="@string/purple_mask"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_mask_img2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
