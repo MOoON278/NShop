@@ -32,4 +32,10 @@
     <string name="postal">Postal</string>
     <string name="address">Address</string>
     <string name="save_changes">Save Changes</string>
+    <string name="saved">Profile Updated!</string>
+    <string name="pick_gender">Pick A Gender :</string>
+    <string name="your_username">Your Username :</string>
+    <string name="your_email">Your Email Address :</string>
+    <string name="your_postal_code">Your Postal Code :</string>
+    <string name="your_address">Your Address :</string>
 </resources>
