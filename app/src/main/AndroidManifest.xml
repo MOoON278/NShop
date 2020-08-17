@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProductBlackMask"></activity>
+        <activity android:name=".ProfilePage"></activity>
         <activity android:name=".ProductBlueMask"></activity>
         <activity android:name=".ProductPurpleMask"></activity>
     </application>

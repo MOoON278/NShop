@@ -78,25 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productPic1" />
 
-    <Button
-        android:id="@+id/changeImg"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="270dp"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="270dp"
-        android:background="@drawable/box"
-        android:text="@string/img01"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/productPic1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.683"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productTitle"
-        app:layout_constraintVertical_bias="1.0" />
-
     <ScrollView
         android:id="@+id/scrollMenu"
         android:layout_width="412dp"
