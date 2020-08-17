@@ -26,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onBlueMaskClick(View view){
+        Intent intent = new Intent(this, ProductBlueMask.class);
+        startActivity(intent);
+    }
+
+    public void onPurpleMaskClick(View view){
+        Intent intent = new Intent(this, ProductPurpleMask.class);
+        startActivity(intent);
+    }
+
     public void onProfileClick(View view) {
         Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
