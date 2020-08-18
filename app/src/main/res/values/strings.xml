@@ -38,4 +38,5 @@
     <string name="your_email">Your Email Address :</string>
     <string name="your_postal_code">Your Postal Code :</string>
     <string name="your_address">Your Address :</string>
+    <string name="profile_pic_update">Profile Picture Updated!</string>
 </resources>

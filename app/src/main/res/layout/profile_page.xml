@@ -21,7 +21,7 @@
         app:backgroundTint="#000000"
         app:fabCustomSize="50dp"
         app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="@+id/productToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/profileToolbar"
         app:layout_constraintEnd_toStartOf="@+id/profileTitle"
         app:layout_constraintStart_toStartOf="@+id/profileToolbar"
         app:layout_constraintTop_toTopOf="parent"
@@ -119,30 +119,44 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
+        android:gravity="left"
         android:text="@string/username"
         android:textColor="#000000"
-        android:textSize="17sp"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toEndOf="@+id/profileImg"
         app:layout_constraintTop_toTopOf="@+id/profileImg" />
+
+    <ImageView
+        android:id="@+id/gender"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/username"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        app:srcCompat="@drawable/male" />
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:gravity="left"
         android:text="@string/email"
         android:textColor="#000000"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/profileImg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toEndOf="@+id/profileImg"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        app:layout_constraintVertical_bias="0.304" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/editProfileBtn"
