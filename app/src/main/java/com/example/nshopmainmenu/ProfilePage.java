@@ -3,6 +3,7 @@ package com.example.nshopmainmenu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +18,14 @@ public class ProfilePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_page);
 
-        ImageView userProfilePic = (ImageView) findViewById(R.id.profileImg);
-        userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+        if (ProfileEditor.imageSetChecker == 1) {
+            ImageView userProfilePic = (ImageView) findViewById(R.id.profileImg);
+            userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+        }
+        else if (ProfileEditor.imageSetChecker == 0){
+            ImageView userProfilePic = (ImageView) findViewById(R.id.profileImg);
+            userProfilePic.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
+        }
 
         TextView textUsername = (TextView) findViewById(R.id.username);
         textUsername.setText(ProfileEditor.savedUsername);
@@ -54,3 +61,54 @@ public class ProfilePage extends AppCompatActivity {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

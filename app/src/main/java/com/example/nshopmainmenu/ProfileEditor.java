@@ -37,6 +37,8 @@ public class ProfileEditor extends AppCompatActivity {
 
     public static final int GET_FROM_GALLERY = 3;
 
+
+    static int imageSetChecker = 0;
     static String savedUsername = "MOoON";
     static String savedEmail = "planetmoon@galaxymail.com";
     static String savedPostal = "04022001";
@@ -49,6 +51,15 @@ public class ProfileEditor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_editor);
+
+        if (imageSetChecker == 1) {
+            ImageView userProfilePic = (ImageView) findViewById(R.id.image);
+            userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+        }
+        else if (imageSetChecker == 0){
+            ImageView userProfilePic = (ImageView) findViewById(R.id.image);
+            userProfilePic.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
+        }
     }
 
     public void onSaveClick(View view) {
@@ -92,6 +103,11 @@ public class ProfileEditor extends AppCompatActivity {
         startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
     }
 
+    public void changePic() {
+        ImageView userProfilePic = (ImageView) findViewById(R.id.image);
+        userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -103,8 +119,10 @@ public class ProfileEditor extends AppCompatActivity {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
                 savedUserProfile = bitmap;
+                changePic();
                 Toast toast = Toast.makeText(this, (R.string.profile_pic_update),Toast.LENGTH_SHORT);
                 toast.show();
+                imageSetChecker = 1;
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

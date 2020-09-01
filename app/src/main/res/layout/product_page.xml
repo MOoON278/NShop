@@ -80,7 +80,7 @@
         android:id="@+id/scrollMenu"
         android:layout_width="412dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="135dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -137,6 +137,7 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descTitle"
@@ -149,6 +150,8 @@
         android:layout_marginTop="130dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/frame"
+        android:onClick="onButtonShowConfirmWindow"
+        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -156,25 +159,44 @@
         app:layout_constraintTop_toBottomOf="@+id/descTitle"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
+    <Button
         android:id="@+id/plus"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/plus"
         android:contentDescription="@string/todo"
+        android:onClick="countUp"
         android:src="@drawable/plus"
-        app:layout_constraintBottom_toBottomOf="@+id/addToCartWord"
-        app:layout_constraintEnd_toEndOf="@+id/addToCartWord"
-        app:layout_constraintStart_toEndOf="@+id/priceTag"
-        app:layout_constraintTop_toTopOf="@+id/addToCartWord" />
+        app:layout_constraintBottom_toTopOf="@+id/addToCart"
+        app:layout_constraintStart_toEndOf="@+id/qtyFrame"
+        app:layout_constraintTop_toTopOf="@+id/qtyFrame" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/plus"
+        android:contentDescription="@string/todo"
+        android:onClick="countUp"
+        android:src="@drawable/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/plus"
+        app:layout_constraintEnd_toEndOf="@+id/area"
+        app:layout_constraintTop_toTopOf="@+id/plus"
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/addToCartWord"
         android:layout_width="100dp"
         android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginLeft="54dp"
         android:gravity="center"
         android:text="@string/add_to_cart"
         android:textColor="#000000"
@@ -182,8 +204,54 @@
         app:layout_constraintBottom_toBottomOf="@+id/addToCart"
         app:layout_constraintEnd_toEndOf="@+id/addToCart"
         app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintStart_toEndOf="@+id/priceTag"
         app:layout_constraintTop_toTopOf="@+id/addToCart"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/qtyFrame"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/addToCart"
+        app:layout_constraintEnd_toEndOf="@+id/addToCart"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toEndOf="@+id/priceTag"
+        app:srcCompat="@drawable/frame2" />
+
+    <TextView
+        android:id="@+id/qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/addToCart"
+        app:layout_constraintEnd_toEndOf="@+id/qtyFrame"
+        app:layout_constraintStart_toStartOf="@+id/qtyFrame"
+        app:layout_constraintTop_toTopOf="@+id/qtyFrame" />
+
+    <ImageView
+        android:id="@+id/area"
+        android:layout_width="90dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addToCartWord"
+        app:layout_constraintStart_toEndOf="@+id/qtyFrame"
+        app:srcCompat="@drawable/frame" />
+
+    <TextView
+        android:id="@+id/qtyNum"
+        android:layout_width="24dp"
+        android:layout_height="29dp"
+        android:text="@string/one"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/plus"
+        app:layout_constraintEnd_toStartOf="@+id/minus"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/plus"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
