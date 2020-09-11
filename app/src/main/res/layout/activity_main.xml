@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_design"
     tools:context=".MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -47,156 +47,145 @@
         android:id="@+id/cart_button"
         android:layout_width="60dp"
         android:layout_height="70dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
         android:baselineAlignBottom="false"
         android:clickable="true"
         android:focusable="auto"
-        android:focusableInTouchMode="false"
         app:backgroundTint="#FFFFFF"
         app:fabCustomSize="60dp"
         app:fabSize="auto"
+        app:layout_constraintBottom_toTopOf="@+id/scrollMenu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="30dp"
         app:srcCompat="@drawable/shopping_cart" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="412dp"
-        android:layout_height="94dp"
-        android:background="#798FCF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="168dp"
-        android:layout_height="78dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollMenu"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:srcCompat="@drawable/nshop" />
-
     <ScrollView
         android:id="@+id/scrollMenu"
-        android:layout_width="412dp"
-        android:layout_height="0dp"
-        android:layout_below="@id/toolbar"
+        android:layout_width="414dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="412dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="35dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/ProductList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Below is our list of Products :"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:fontFamily="sans-serif-smallcaps" />
+            <RelativeLayout
+                android:layout_width="417dp"
+                android:layout_height="150dp">
 
-            <ImageButton
-                android:id="@+id/black_mask_img"
-                style="@android:style/Widget.DeviceDefault.ImageButton"
-                android:layout_width="412dp"
-                android:layout_height="200dp"
-                android:background="#FFFFFF"
-                android:onClick="onBlackMaskClick"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="parent"
-                app:srcCompat="@drawable/mask_black" />
+                <ImageButton
+                    android:id="@+id/black_mask_img"
+                    style="@android:style/Widget.DeviceDefault.ImageButton"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="onBlackMaskClick"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:srcCompat="@drawable/mask_black" />
 
-            <Button
-                android:id="@+id/black_mask_btn"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#000000"
-                android:onClick="onBlackMaskClick"
-                android:text="@string/black_mask"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/black_mask_img" />
+                <ImageButton
+                    android:id="@+id/blue_mask_img"
+                    style="@android:style/Widget.DeviceDefault.ImageButton"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_toEndOf="@+id/black_mask_img"
+                    android:adjustViewBounds="false"
+                    android:background="@android:color/transparent"
+                    android:cropToPadding="false"
+                    android:onClick="onBlueMaskClick"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/mask" />
 
-            <ImageButton
-                android:id="@+id/blue_mask_img"
-                style="@android:style/Widget.DeviceDefault.ImageButton"
-                android:layout_width="412dp"
-                android:layout_height="200dp"
-                android:layout_gravity="left"
-                android:adjustViewBounds="false"
-                android:background="#FFFFFF"
-                android:cropToPadding="false"
-                android:scaleType="centerCrop"
-                android:onClick="onBlueMaskClick"
-                app:layout_constraintStart_toStartOf="@id/blue_mask_btn"
-                app:layout_constraintTop_toBottomOf="@id/black_mask_btn"
-                app:srcCompat="@drawable/mask" />
+            </RelativeLayout>
 
-            <Button
-                android:id="@+id/blue_mask_btn"
-                android:layout_width="412dp"
-                android:layout_height="100dp"
-                android:background="#000000"
-                android:text="@string/blue_mask"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:onClick="onBlueMaskClick"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/blue_mask_img" />
+            <RelativeLayout
+                android:layout_width="417dp"
+                android:layout_height="150dp">
 
-            <ImageButton
-                android:id="@+id/purple_mask_img"
-                style="@android:style/Widget.DeviceDefault.ImageButton"
-                android:layout_width="412dp"
-                android:layout_height="200dp"
-                android:adjustViewBounds="false"
-                android:background="#FFFFFF"
-                android:cropToPadding="false"
-                android:scaleType="centerCrop"
-                android:onClick="onPurpleMaskClickaskClick"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/blue_mask_btn"
-                app:srcCompat="@drawable/mask_purple" />
+                <Button
+                    android:id="@+id/black_mask_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="30dp"
+                    android:background="#000000"
+                    android:onClick="onBlackMaskClick"
+                    android:text="@string/black_mask"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
-            <Button
-                android:id="@+id/purple_mask_btn"
-                android:layout_width="412dp"
-                android:layout_height="100dp"
-                android:background="#000000"
-                android:text="@string/purple_mask"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:onClick="onPurpleMaskClick"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/purple_mask_img" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/bottom"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:background="#798FCF"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme" />
+                <Button
+                    android:id="@+id/blue_mask_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_toEndOf="@+id/black_mask_btn"
+                    android:background="#000000"
+                    android:onClick="onBlueMaskClick"
+                    android:text="@string/blue_mask"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="417dp"
+                android:layout_height="150dp">
+
+                <ImageButton
+                    android:id="@+id/purple_mask_img"
+                    style="@android:style/Widget.DeviceDefault.ImageButton"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="30dp"
+                    android:adjustViewBounds="false"
+                    android:background="@android:color/transparent"
+                    android:cropToPadding="false"
+                    android:onClick="onPurpleMaskClick"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/mask_purple" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="417dp"
+                android:layout_height="150dp">
+
+                <Button
+                    android:id="@+id/purple_mask_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="30dp"
+                    android:background="#000000"
+                    android:onClick="onPurpleMaskClick"
+                    android:text="@string/purple_mask"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
