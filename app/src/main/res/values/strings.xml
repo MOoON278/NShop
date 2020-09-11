@@ -41,4 +41,12 @@
     <string name="profile_pic_update">Profile Picture Updated!</string>
     <string name="quantity">Qty</string>
     <string name="one">1</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="contact_us_details">
+        \n\nKong Hai Adam - kongha-wm19@student.tarc.edu.my
+        \n\nHow Yeow Liang - howyl-wm19@student.tarc.edu.my
+        \n\nChan Kit Yuen - chanky-wh16@student.tarc.edu.my
+        \n\nYap Zheng Yew - yapzy-wm19@student.tarc.edu.my</string>
+    <string name="about_us">About Us</string>
+    <string name="about_us_details">NSHOPS is a online shopping platform that allow user to buy things such as mash and other stuffs</string>
 </resources>
