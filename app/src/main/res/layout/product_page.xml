@@ -32,7 +32,7 @@
         android:id="@+id/productPic1"
         android:layout_width="350dp"
         android:layout_height="190dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

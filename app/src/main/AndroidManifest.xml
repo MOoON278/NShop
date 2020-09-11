@@ -25,6 +25,7 @@
         <activity android:name=".ProfileEditor"></activity>
         <activity android:name=".ProductBlueMask"></activity>
         <activity android:name=".ProductPurpleMask"></activity>
+        <activity android:name=".AboutUs"></activity>
     </application>
 
 </manifest>

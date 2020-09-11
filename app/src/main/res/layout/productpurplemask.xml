@@ -6,13 +6,15 @@
     android:id="@+id/Item"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/product_details"
     tools:context=".ProductPurpleMask">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/returnButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:baselineAlignBottom="false"
         android:clickable="true"
         android:focusable="auto"
@@ -21,45 +23,19 @@
         app:backgroundTint="#000000"
         app:fabCustomSize="50dp"
         app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="@+id/productToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/productTitle"
-        app:layout_constraintStart_toStartOf="@+id/productToolbar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/abc_vector_test" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/productToolbar"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:background="#798FCF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/productTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/product"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/productToolbar"
-        app:layout_constraintEnd_toEndOf="@+id/productToolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/productPic1"
         android:layout_width="350dp"
         android:layout_height="190dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productToolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mask_purple" />
 
     <TextView
@@ -80,7 +56,7 @@
         android:layout_width="412dp"
         android:layout_height="0dp"
         android:layout_marginBottom="100dp"
-        android:background="#FFFFFF"
+        android:background="@android:color/transparent"
         android:gravity="center|top"
         android:text="@string/purple_mask_desc"
         android:textColor="#000000"
@@ -97,11 +73,9 @@
         android:layout_width="139dp"
         android:layout_height="35dp"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="252dp"
-        android:layout_marginRight="252dp"
-        android:background="#FFFCFC"
+        android:background="@android:color/transparent"
         android:text="@string/description_label"
         android:textAllCaps="false"
         android:textColor="#000000"

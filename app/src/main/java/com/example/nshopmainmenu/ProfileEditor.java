@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -23,14 +24,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ProfileEditor extends AppCompatActivity {
+
+    TextView user_name, user_email, user_postal, user_address;
+    private DatabaseReference reff;
+    private Button btn, btnUpdate;
 
     private RadioButton radioGenderButton1;
     private RadioButton radioGenderButton2;
@@ -51,6 +62,39 @@ public class ProfileEditor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_editor);
+
+        user_name = (TextView) findViewById (R.id.username);
+        user_email = (TextView) findViewById (R.id.email);
+        user_postal = (TextView) findViewById (R.id.postal);
+        user_address = (TextView) findViewById (R.id.address);
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+                String name = dataSnapshot.child("Username").getValue().toString();
+                String email = dataSnapshot.child("Email").getValue().toString();
+                String postal = dataSnapshot.child("Postal").getValue().toString();
+                String address = dataSnapshot.child("Address").getValue().toString();
+                user_name.setText(name);
+                user_email.setText(email);
+                user_postal.setText(postal);
+                user_address.setText(address);
+                if (dataSnapshot.child("Gender").getValue().toString() == "M") {
+                    ImageView imgGender = (ImageView) findViewById(R.id.gender);
+                    imgGender.setImageResource(R.drawable.male);
+                }
+                else if (dataSnapshot.child("Gender").getValue().toString() == "F") {
+                    ImageView imgGender = (ImageView) findViewById(R.id.gender);
+                    imgGender.setImageResource(R.drawable.female);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError){
+
+            }
+        });
 
         if (imageSetChecker == 1) {
             ImageView userProfilePic = (ImageView) findViewById(R.id.image);

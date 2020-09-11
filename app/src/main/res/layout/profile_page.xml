@@ -6,13 +6,15 @@
     android:id="@+id/Profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/profile_page"
     tools:context=".ProfilePage">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/returnButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:baselineAlignBottom="false"
         android:clickable="true"
         android:focusable="auto"
@@ -21,9 +23,7 @@
         app:backgroundTint="#000000"
         app:fabCustomSize="50dp"
         app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="@+id/profileToolbar"
-        app:layout_constraintEnd_toStartOf="@+id/profileTitle"
-        app:layout_constraintStart_toStartOf="@+id/profileToolbar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/abc_vector_test" />
@@ -67,40 +67,12 @@
         android:id="@+id/container"
         android:layout_width="411dp"
         android:layout_height="260dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/frame"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileToolbar"
-        app:layout_constraintVertical_bias="0.357" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/profileToolbar"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:background="#798FCF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/profileTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/your_profile"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/profileToolbar"
-        app:layout_constraintEnd_toEndOf="@+id/profileToolbar"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -180,7 +152,7 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="411dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="190dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -221,7 +193,8 @@
                 android:background="#000000"
                 android:text="@string/about_us_btn"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:onClick="onAboutUsClick" />
 
         </LinearLayout>
     </HorizontalScrollView>
