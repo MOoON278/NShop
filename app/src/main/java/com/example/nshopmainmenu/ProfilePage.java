@@ -1,29 +1,20 @@
 package com.example.nshopmainmenu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.IgnoreExtraProperties;
-import com.google.firebase.database.ValueEventListener;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfilePage extends AppCompatActivity {
 
@@ -45,13 +36,14 @@ public class ProfilePage extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 String name = dataSnapshot.child("Username").getValue().toString();
                 String email = dataSnapshot.child("Email").getValue().toString();
+                String imgGen = dataSnapshot.child("Gender").getValue().toString();
                 user_name.setText(name);
                 user_email.setText(email);
-                if (dataSnapshot.child("Gender").getValue().toString() == "M") {
+                if (imgGen.equals("M")) {
                     ImageView imgGender = (ImageView) findViewById(R.id.gender);
                     imgGender.setImageResource(R.drawable.male);
                 }
-                else if (dataSnapshot.child("Gender").getValue().toString() == "F") {
+                else if (imgGen.equals("F")) {
                     ImageView imgGender = (ImageView) findViewById(R.id.gender);
                     imgGender.setImageResource(R.drawable.female);
                 }

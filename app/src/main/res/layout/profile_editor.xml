@@ -130,7 +130,7 @@
                 android:orientation="vertical">
 
                 <RadioButton
-                    android:id="@+id/male"
+                    android:id="@+id/Male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -144,7 +144,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/email" />
 
                 <RadioButton
-                    android:id="@+id/female"
+                    android:id="@+id/Female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -154,7 +154,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.315"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/male" />
+                    app:layout_constraintTop_toBottomOf="@+id/Male" />
             </RadioGroup>
 
             <TextView
@@ -187,13 +187,21 @@
 
             <EditText
                 android:id="@+id/address"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="@string/address" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@android:color/transparent"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme" />
 
         </LinearLayout>
     </ScrollView>

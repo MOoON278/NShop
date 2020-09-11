@@ -17,7 +17,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 
-public class ShoppingCart extends AppCompatActivity{
+public class ShoppingCart extends AppCompatActivity {
 
     TextView product_name;
     com.google.firebase.database.DatabaseReference reff;
@@ -27,15 +27,16 @@ public class ShoppingCart extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping_cart);
 
-        product_name = (TextView) findViewById (R.id.);
+        /*product_name = (TextView) findViewById (R.id.);*/
 
         reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1");
         reff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String productName = dataSnapshot.child("ProductName").getValue().toString();
                 product_name.setText(productName);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -43,8 +44,8 @@ public class ShoppingCart extends AppCompatActivity{
         });
 
 
-    com.google.firebase.database.DatabaseReference reff;
+        com.google.firebase.database.DatabaseReference reff;
 
 
-    
+    }
 }

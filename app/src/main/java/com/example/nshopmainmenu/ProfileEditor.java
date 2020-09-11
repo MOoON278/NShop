@@ -1,33 +1,24 @@
 package com.example.nshopmainmenu;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Picture;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,11 +31,12 @@ import java.io.IOException;
 public class ProfileEditor extends AppCompatActivity {
 
     TextView user_name, user_email, user_postal, user_address;
+    RadioGroup radio_pick;
+    RadioButton picked1, picked2;
     private DatabaseReference reff;
     private Button btn, btnUpdate;
 
-    private RadioButton radioGenderButton1;
-    private RadioButton radioGenderButton2;
+
 
     public static final int GET_FROM_GALLERY = 3;
 
@@ -57,16 +49,21 @@ public class ProfileEditor extends AppCompatActivity {
     static String savedGender = "Male";
     static Bitmap savedUserProfile = null;
 
+    String newUsername;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_editor);
 
-        user_name = (TextView) findViewById (R.id.username);
-        user_email = (TextView) findViewById (R.id.email);
-        user_postal = (TextView) findViewById (R.id.postal);
-        user_address = (TextView) findViewById (R.id.address);
+        user_name = (EditText) findViewById (R.id.username);
+        user_email = (EditText) findViewById (R.id.email);
+        user_postal = (EditText) findViewById (R.id.postal);
+        user_address = (EditText) findViewById (R.id.address);
+        radio_pick = (RadioGroup) findViewById(R.id.radio);
+
+
 
         reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
         reff.addValueEventListener(new ValueEventListener() {
@@ -80,13 +77,11 @@ public class ProfileEditor extends AppCompatActivity {
                 user_email.setText(email);
                 user_postal.setText(postal);
                 user_address.setText(address);
-                if (dataSnapshot.child("Gender").getValue().toString() == "M") {
-                    ImageView imgGender = (ImageView) findViewById(R.id.gender);
-                    imgGender.setImageResource(R.drawable.male);
+                if (dataSnapshot.child("Gender").getValue().toString().equals("M")) {
+                    radio_pick.check(R.id.Male);
                 }
-                else if (dataSnapshot.child("Gender").getValue().toString() == "F") {
-                    ImageView imgGender = (ImageView) findViewById(R.id.gender);
-                    imgGender.setImageResource(R.drawable.female);
+                else if (dataSnapshot.child("Gender").getValue().toString().equals("F")) {
+                    radio_pick.check(R.id.Female);
                 }
             }
 
@@ -107,27 +102,35 @@ public class ProfileEditor extends AppCompatActivity {
     }
 
     public void onSaveClick(View view) {
-        EditText email = (EditText) findViewById(R.id.email);
-        EditText postal = (EditText) findViewById(R.id.postal);
-        EditText address = (EditText) findViewById(R.id.address);
-        EditText username = (EditText) findViewById(R.id.username);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
 
-        radioGenderButton1 = (RadioButton) findViewById(R.id.male);
-        radioGenderButton2 = (RadioButton) findViewById(R.id.female);
+        String name = user_name.getText().toString();
+        String email = user_email.getText().toString();
+        String postal = user_postal.getText().toString();
+        String address = user_address.getText().toString();
 
-        savedUsername = username.getText().toString();
-        savedEmail = email.getText().toString();
-        savedPostal = postal.getText().toString();
-        savedAddress = address.getText().toString();
+        reff.child("Username").setValue(name);
+        reff.child("Email").setValue(email);
+        reff.child("Postal").setValue(postal);
+        reff.child("Address").setValue(address);
 
-        if (radioGenderButton1.isChecked())
-        {
-            savedGender = "Male";
+        radio_pick = (RadioGroup) findViewById(R.id.radio);
+        picked1 = (RadioButton) findViewById(R.id.Male);
+        picked2 = (RadioButton) findViewById(R.id.Female);
+
+        if(radio_pick.getCheckedRadioButtonId() != -1) {
+            if (picked1.isChecked()) {
+                reff.child("Gender").setValue("M");
+            }
+            else if (picked2.isChecked()) {
+                reff.child("Gender").setValue("F");
+            }
         }
-        else if (radioGenderButton2.isChecked())
-        {
-            savedGender = "Female";
-        }
+
+
+
+
+
         showMsg(view);
         onReturnClick(view);
     }
