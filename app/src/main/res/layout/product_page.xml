@@ -150,14 +150,13 @@
 
     <Button
         android:id="@+id/minus"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:background="@drawable/plus"
+        android:background="@drawable/minus_icon_1320185727443878037"
         android:contentDescription="@string/todo"
-        android:onClick="countUp"
+        android:onClick="countDown"
         android:src="@drawable/plus"
         app:layout_constraintBottom_toBottomOf="@+id/plus"
         app:layout_constraintEnd_toEndOf="@+id/area"

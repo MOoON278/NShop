@@ -16,6 +16,8 @@ public class ProductBlackMask extends AppCompatActivity {
 
     private TextView qty;
     private int qtyNum = 1;
+    private String name = "Black Mask";
+    private double total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,22 @@ public class ProductBlackMask extends AppCompatActivity {
         qty.setText(String.format("%s", qtyNum));
     }
 
+    public void countDown(View view) {
+        qtyNum--;
+        qty.setText(String.format("%s", qtyNum));
+    }
+
     public void onReturnClick(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     public void onButtonShowConfirmWindow(View view) {
+
+        ProductVariable.prodName = name;
+        ProductVariable.prodQty = qtyNum;
+        total = qtyNum * 15.00;
+        ProductVariable.prodTotalPrice = total;
 
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater)

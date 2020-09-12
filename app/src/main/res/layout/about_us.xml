@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/abc_vector_test" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/AboutUs"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

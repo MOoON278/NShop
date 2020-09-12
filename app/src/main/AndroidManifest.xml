@@ -26,6 +26,8 @@
         <activity android:name=".ProductBlueMask"></activity>
         <activity android:name=".ProductPurpleMask"></activity>
         <activity android:name=".AboutUs"></activity>
+        <activity android:name=".ContactUs"></activity>
+        <activity android:name=".ConfirmOrder"></activity>
     </application>
 
 </manifest>
