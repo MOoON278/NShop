@@ -93,6 +93,11 @@ public class ProfilePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onContactUsClick(View view) {
+        Intent intent = new Intent(this, ContactUs.class);
+        startActivity(intent);
+    }
+
     public void onEditClick(View view) {
         Intent intent = new Intent(this, ProfileEditor.class);
         startActivity(intent);
@@ -102,9 +107,6 @@ public class ProfilePage extends AppCompatActivity {
         Toast toast = Toast.makeText(this, R.string.profile_page_message,Toast.LENGTH_SHORT);
 
         toast.show();
-    }
-
-    private class DatabaseReference {
     }
 }
 

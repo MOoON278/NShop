@@ -34,7 +34,6 @@ public class ProfileEditor extends AppCompatActivity {
     RadioGroup radio_pick;
     RadioButton picked1, picked2;
     private DatabaseReference reff;
-    private Button btn, btnUpdate;
 
 
 
@@ -42,15 +41,7 @@ public class ProfileEditor extends AppCompatActivity {
 
 
     static int imageSetChecker = 0;
-    static String savedUsername = "MOoON";
-    static String savedEmail = "planetmoon@galaxymail.com";
-    static String savedPostal = "04022001";
-    static String savedAddress = "Milky Way, Solar System, Planet Earth, Orbit 1, Moon";
-    static String savedGender = "Male";
     static Bitmap savedUserProfile = null;
-
-    String newUsername;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

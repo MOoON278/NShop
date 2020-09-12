@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProductVariable extends AppCompatActivity {
 
-    static String prodName;
-    static int prodQty;
-    static double prodTotalPrice;
+
 
 
 }

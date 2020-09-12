@@ -15,6 +15,8 @@
     <string name="blue_mask_desc">A mask made of blue cloth.</string>
     <string name="purple_mask_desc">A mask made of purple cloth.</string>
     <string name="price01">RM15.00 per pcs</string>
+    <string name="price02">RM2.00 per pcs</string>
+    <string name="price03">RM13.00 per pcs</string>
     <string name="todo">TODO</string>
     <string name="main_menu_message">You\'re at the Main Menu already!</string>
     <string name="profile_page_message">You\'re at the Profile Page already!</string>
@@ -53,6 +55,8 @@
     <string name="rm">RM</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+    <string name="added_order">Order Added!</string>
+    <string name="zero_order">Cannot add zero items into the cart!</string>
     <string name="placeholder">Place Holder.</string>
 
 </resources>
