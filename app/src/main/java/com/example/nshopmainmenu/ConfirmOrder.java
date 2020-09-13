@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+
 public class ConfirmOrder extends AppCompatActivity {
 
     private DatabaseReference reff;
@@ -61,7 +63,9 @@ public class ConfirmOrder extends AppCompatActivity {
     }
 
     public void onConfirmClick(View view){
+
         numOrd++;
+
         numberOfOrder = String.valueOf(numOrd);
 
         reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(numberOfOrder);

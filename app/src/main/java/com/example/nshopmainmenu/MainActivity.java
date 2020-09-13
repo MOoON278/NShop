@@ -40,4 +40,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
     }
+
+    public void onShoppingCartClick(View view) {
+        Intent intent = new Intent(this, ShoppingCart.class);
+        startActivity(intent);
+    }
 }

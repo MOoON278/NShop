@@ -58,5 +58,13 @@
     <string name="added_order">Order Added!</string>
     <string name="zero_order">Cannot add zero items into the cart!</string>
     <string name="placeholder">Place Holder.</string>
-
+    <string name="product_name">Product Name</string>
+    <string name="qty">Qty</string>
+    <string name="price_rm">Price(RM)</string>
+    <string name="dash">-</string>
+    <string name="check_out">Check Out</string>
+    <string name="total_price_label">Total Price:</string>
+    <string name="pn" type="id">productName</string>
+    <string name="pd" type="id">productPrice</string>
+    <string name="pq" type="id">productQty</string>
 </resources>
