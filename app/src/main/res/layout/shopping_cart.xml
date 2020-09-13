@@ -537,6 +537,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
+        android:onClick="onCheckoutClick"
         android:background="#000000"
         android:text="@string/check_out"
         android:textColor="#FFFFFF"

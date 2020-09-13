@@ -66,4 +66,9 @@ public class ShoppingCart2 extends AppCompatActivity {
         Intent intent = new Intent(this, ProfilePage.class);
         startActivity(intent);
     }
+
+    public void onCheckoutClick(View view) {
+        Intent intent = new Intent(this, PaymentPage.class);
+        startActivity(intent);
+    }
 }
