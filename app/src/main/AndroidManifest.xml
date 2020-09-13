@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nshopmainmenu">
 
+    <uses-permission android:name='android.permission.WRITE_EXTERNAL_STORAGE' />
+    <uses-permission android:name='android.permission.READ_EXTERNAL_STORAGE' />
+    <uses-permission android:name='android.permission.CAMERA' />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUp"></activity>
-        <activity android:name=".MainMenuPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProductBlackMask" />
-        <activity android:name=".ProductBlueMask" />
-        <activity android:name=".ProductPurpleMask" />
+        <activity android:name=".ProductBlackMask"></activity>
+        <activity android:name=".ProfilePage"></activity>
+        <activity android:name=".ProfileEditor"></activity>
+        <activity android:name=".ProductBlueMask"></activity>
+        <activity android:name=".ProductPurpleMask"></activity>
+        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".ContactUs"></activity>
+        <activity android:name=".ConfirmOrder"></activity>
     </application>
 
 </manifest>
