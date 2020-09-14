@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class ProfilePage extends AppCompatActivity {
 
     TextView user_name, user_email;
@@ -35,9 +36,9 @@ public class ProfilePage extends AppCompatActivity {
         user_name = (TextView) findViewById (R.id.username);
         user_email = (TextView) findViewById (R.id.email);
 
-        String userNum = String.valueOf(UserInformation.cusNum);
+        String ocNum = String.valueOf(SignUp.cusNum);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
@@ -95,6 +96,7 @@ public class ProfilePage extends AppCompatActivity {
                 ConfirmOrder.numOrd = 0;
                 PaymentPage.numOfPayment = 0;
                 PaymentPage.orderID = 100000;
+
                 FirebaseAuth.getInstance().signOut();
                 Intent toMain = new Intent(ProfilePage.this,MainActivity.class);
                 startActivity(toMain);
@@ -106,7 +108,7 @@ public class ProfilePage extends AppCompatActivity {
 
 
     public void onReturnClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
 

@@ -42,14 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if(mFirebaseUser != null ){
-                    Toast.makeText(MainActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
-                    Intent logIn = new Intent(MainActivity.this,Menu.class);
-                    startActivity(logIn);
-                }
-                else{
-                    Toast.makeText(MainActivity.this,"Please login",Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(MainActivity.this,"Please login",Toast.LENGTH_SHORT).show();
             }
         };
 
@@ -75,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()){
                                 Toast.makeText(MainActivity.this, "Login Error, Please login again",Toast.LENGTH_SHORT).show();
-                                UserInformation.cID = email;
+
                             }
                             else{
                                 Intent toHome = new Intent(MainActivity.this,Menu.class);
                                 startActivity(toHome);
+                                SignUp.cusNum++;
                             }
                         }
                     });

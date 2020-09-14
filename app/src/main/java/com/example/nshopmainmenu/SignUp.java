@@ -22,6 +22,8 @@ public class SignUp extends AppCompatActivity {
     EditText emailId, password, confirmedPassword;
     Button btnSignUp;
     FirebaseAuth mFirebaseAuth;
+    private String email;
+    static int cusNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class SignUp extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String email = emailId.getText().toString();
+                email = emailId.getText().toString();
                 String pwd = password.getText().toString();
                 if (email.isEmpty()){
                     emailId.setError("Please enter email id");
@@ -58,9 +60,7 @@ public class SignUp extends AppCompatActivity {
                             }
                             else {
                                 startActivity(new Intent(SignUp.this, UserInformation.class));
-                                String emailAddress = String.valueOf(emailId);
-                                UserInformation.cID = emailAddress;
-                                UserInformation.cusNum++;
+                                cusNum++;
                             }
                         }
                     });

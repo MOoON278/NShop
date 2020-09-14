@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class ConfirmOrder extends AppCompatActivity {
 
     private DatabaseReference reff;
@@ -66,14 +67,14 @@ public class ConfirmOrder extends AppCompatActivity {
         numberOfOrder = String.valueOf(numOrd);
 
         String orderId = String.valueOf(PaymentPage.orderID);
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(orderId).child(numberOfOrder);
-        reff.child("Price").setValue(prodTotalPrice);
-        reff.child("Product Name").setValue(prodName);
-        reff.child("Quantity").setValue(prodQty);
-        reff.child("Current Total").setValue(allTotal);
+        reff = FirebaseDatabase.getInstance().getReference();
+        reff.child("Shopping Cart").child(orderId).child(numberOfOrder).child("Price").setValue(prodTotalPrice);
+        reff.child("Shopping Cart").child(orderId).child(numberOfOrder).child("Product Name").setValue(prodName);
+        reff.child("Shopping Cart").child(orderId).child(numberOfOrder).child("Quantity").setValue(prodQty);
+        reff.child("Shopping Cart").child(orderId).child(numberOfOrder).child("Current Total").setValue(allTotal);
         Toast toast = Toast.makeText(this, R.string.added_order,Toast.LENGTH_SHORT);
         toast.show();
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
 }

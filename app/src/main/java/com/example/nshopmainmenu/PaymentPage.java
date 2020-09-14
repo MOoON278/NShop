@@ -35,7 +35,8 @@ public class PaymentPage extends AppCompatActivity {
         String atotal = String.valueOf(ConfirmOrder.allTotal); //show total price
         total.setText(atotal);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        String ocNum = String.valueOf(SignUp.cusNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
@@ -57,11 +58,12 @@ public class PaymentPage extends AppCompatActivity {
 
     public void onConfirmClick(View view) {
         String oID = String.valueOf(orderID);
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+        String ocNum = String.valueOf(SignUp.cusNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ocNum).child(oID);
         reff.child("Total Price").setValue(ConfirmOrder.allTotal);
         orderID++;
         numOfPayment++;
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
         ConfirmOrder.numOrd = 0;
         ConfirmOrder.allTotal = 0;

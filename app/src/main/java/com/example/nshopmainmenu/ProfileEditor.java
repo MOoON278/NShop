@@ -52,10 +52,13 @@ public class ProfileEditor extends AppCompatActivity {
         user_postal = (EditText) findViewById (R.id.postal);
         user_address = (EditText) findViewById (R.id.addressLabel1);
         radio_pick = (RadioGroup) findViewById(R.id.radio);
+        user_bankNum = (EditText) findViewById(R.id.bankNum);
+        user_bankHolder = (EditText) findViewById(R.id.bankHolder);
 
 
+        String ocNum = String.valueOf(SignUp.cusNum);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
@@ -96,7 +99,9 @@ public class ProfileEditor extends AppCompatActivity {
     }
 
     public void onSaveClick(View view) {
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        String cusNum1 = String.valueOf(UserInformation.cusNum);
+        String ocNum = String.valueOf(SignUp.cusNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
 
         String name = user_name.getText().toString();
         String email = user_email.getText().toString();

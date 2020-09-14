@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+
 public class UserInformation extends AppCompatActivity {
 
     TextView user_name, user_email, user_postal, user_address, user_bankNum, user_bankHolder;
@@ -34,7 +35,6 @@ public class UserInformation extends AppCompatActivity {
     RadioButton picked1, picked2;
     private DatabaseReference reff;
     private int x;
-    static String cID;
     static int cusNum;
 
 
@@ -54,53 +54,17 @@ public class UserInformation extends AppCompatActivity {
         user_postal = (EditText) findViewById (R.id.postal);
         user_address = (EditText) findViewById (R.id.addressLabel1);
         radio_pick = (RadioGroup) findViewById(R.id.radio);
+        user_bankNum = (EditText) findViewById(R.id.bankNum);
+        user_bankHolder = (EditText) findViewById(R.id.bankHolder);
 
 
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
-        reff.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
-                String name = dataSnapshot.child("Username").getValue().toString();
-                String email = dataSnapshot.child("Email").getValue().toString();
-                String postal = dataSnapshot.child("Postal").getValue().toString();
-                String address = dataSnapshot.child("Address").getValue().toString();
-                String bNum = dataSnapshot.child("Bank Acc Number").getValue().toString();
-                String bName = dataSnapshot.child("Bank Acc Holder").getValue().toString();
-                user_name.setText(name);
-                user_email.setText(email);
-                user_postal.setText(postal);
-                user_address.setText(address);
-                user_bankNum.setText(bNum);
-                user_bankHolder.setText(bName);
-                if (dataSnapshot.child("Gender").getValue().toString().equals("M")) {
-                    radio_pick.check(R.id.Male);
-                }
-                else if (dataSnapshot.child("Gender").getValue().toString().equals("F")) {
-                    radio_pick.check(R.id.Female);
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError){
-
-            }
-        });
-
-        if (imageSetChecker == 1) {
-            ImageView userProfilePic = (ImageView) findViewById(R.id.image);
-            userProfilePic.setImageBitmap(UserInformation.savedUserProfile);
-        }
-        else if (imageSetChecker == 0){
-            ImageView userProfilePic = (ImageView) findViewById(R.id.image);
-            userProfilePic.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.profile));
-        }
     }
 
     public void onSaveClick(View view) {
-        cusNum++;
-
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        String ocNum = String.valueOf(SignUp.cusNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
 
         String name = user_name.getText().toString();
         String email = user_email.getText().toString();
@@ -109,13 +73,13 @@ public class UserInformation extends AppCompatActivity {
         String bNum = user_bankNum.getText().toString();
         String bName = user_bankHolder.getText().toString();
 
+
         reff.child("Username").setValue(name);
         reff.child("Email").setValue(email);
         reff.child("Postal").setValue(postal);
         reff.child("Address").setValue(address);
         reff.child("Bank Acc Number").setValue(bNum);
         reff.child("Bank Acc Holder").setValue(bName);
-        reff.child("User ID").setValue(cID);
 
         radio_pick = (RadioGroup) findViewById(R.id.radio);
         picked1 = (RadioButton) findViewById(R.id.Male);
@@ -135,7 +99,7 @@ public class UserInformation extends AppCompatActivity {
 
 
         showMsg(view);
-        onReturnClick(view);
+        onDoneClick(view);
     }
 
     public void showMsg(View view){
@@ -144,7 +108,7 @@ public class UserInformation extends AppCompatActivity {
         toast.show();
     }
 
-    public void onReturnClick(View view) {
+    public void onDoneClick(View view) {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }

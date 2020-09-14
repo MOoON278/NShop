@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/menu_design"
-    tools:context=".MainActivity">
+    tools:context=".Menu">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/home_button"

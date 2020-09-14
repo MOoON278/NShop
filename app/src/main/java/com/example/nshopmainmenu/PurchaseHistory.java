@@ -46,7 +46,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -60,7 +60,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child("100000");
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -83,7 +84,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -97,7 +98,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -121,7 +123,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -135,7 +137,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -158,7 +161,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -172,7 +175,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -195,7 +199,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -209,7 +213,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -232,7 +237,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -246,7 +251,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -269,7 +275,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -283,7 +289,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -306,7 +313,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -320,7 +327,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -344,7 +352,7 @@ public class PurchaseHistory extends AppCompatActivity {
                 String userNum = String.valueOf(UserInformation.cusNum);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -358,7 +366,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -381,7 +390,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -395,7 +404,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -418,7 +428,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -432,7 +442,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -455,7 +466,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String userNum = String.valueOf(UserInformation.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -469,7 +480,8 @@ public class PurchaseHistory extends AppCompatActivity {
                     }
                 });
                 String oID = String.valueOf(100000 + a--);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
+                String ordNum = String.valueOf(PaymentPage.orderID);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

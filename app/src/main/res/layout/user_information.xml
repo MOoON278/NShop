@@ -4,7 +4,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ProfileEdit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/user_information"
@@ -12,14 +11,18 @@
 
     <ScrollView
         android:id="@+id/profileScroll"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="500dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,8 +73,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/username" />
+                android:hint="@string/username"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/emailHint"
@@ -89,8 +92,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textEmailAddress"
-                android:text="@string/email" />
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/pickla"
@@ -153,8 +156,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textPostalAddress"
-                android:text="@string/postal" />
+                android:hint="@string/postal"
+                android:inputType="textPostalAddress" />
 
             <TextView
                 android:id="@+id/addressHint"
@@ -172,15 +175,15 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/address" />
+                android:hint="@string/address"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/bankAccNumHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16sp"
-                android:text="Bank Account Number :"
+                android:text="@string/bank_account_number_label"
                 android:textSize="18sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/username" />
 
@@ -191,15 +194,15 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/address" />
+                android:hint="@string/bank_account_number"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/bankAccHolderHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16sp"
-                android:text="Bank Account Holder :"
+                android:text="@string/bank_account_holder_label"
                 android:textSize="18sp"
                 app:layout_constraintBaseline_toBaselineOf="@id/username" />
 
@@ -210,8 +213,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/address" />
+                android:hint="@string/bank_account_holder"
+                android:inputType="textPersonName" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
