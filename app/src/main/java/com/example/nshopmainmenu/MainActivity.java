@@ -45,4 +45,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShoppingCart.class);
         startActivity(intent);
     }
+
+    public void onCheckoutClick(View view) {
+        Intent intent = new Intent(this, PaymentPage.class);
+        startActivity(intent);
+    }
 }

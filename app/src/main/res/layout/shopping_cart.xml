@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/shopping_cart_page"
-    tools:context=".ShoppingCart2">
+    tools:context=".ShoppingCart">
 
     <TextView
         android:id="@+id/priceLabel"
@@ -72,13 +72,6 @@
         app:maxImageSize="40dp"
         app:srcCompat="@drawable/abc_vector_test" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvShoppingCart"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        tools:layout_editor_absoluteX="376dp"
-        tools:layout_editor_absoluteY="691dp" />
-
     <ScrollView
         android:id="@+id/scrollMenu"
         android:layout_width="414dp"
@@ -95,7 +88,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -104,18 +97,18 @@
 
                 <TextView
                     android:id="@+id/productName1"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty1"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName1"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -138,18 +131,18 @@
 
                 <TextView
                     android:id="@+id/productName2"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty2"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName2"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -172,18 +165,18 @@
 
                 <TextView
                     android:id="@+id/productName3"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty3"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName3"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -206,18 +199,18 @@
 
                 <TextView
                     android:id="@+id/productName4"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty4"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName4"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -240,18 +233,18 @@
 
                 <TextView
                     android:id="@+id/productName5"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty5"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName5"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -274,18 +267,18 @@
 
                 <TextView
                     android:id="@+id/productName6"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
+                    android:layout_marginStart="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty6"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName6"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -308,18 +301,18 @@
 
                 <TextView
                     android:id="@+id/productName7"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty7"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName7"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -342,18 +335,18 @@
 
                 <TextView
                     android:id="@+id/productName8"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty8"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName8"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -376,18 +369,18 @@
 
                 <TextView
                     android:id="@+id/productName9"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty9"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName9"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -410,18 +403,18 @@
 
                 <TextView
                     android:id="@+id/productName10"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty10"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName10"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -444,18 +437,18 @@
 
                 <TextView
                     android:id="@+id/productName11"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty11"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName11"
                     android:gravity="center"
                     android:text="@string/dash"
@@ -478,18 +471,18 @@
 
                 <TextView
                     android:id="@+id/productName12"
-                    android:layout_width="125dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:gravity="center"
                     android:text="@string/dash"
                     android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/productQty12"
-                    android:layout_width="20dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
+                    android:layout_marginStart="15dp"
                     android:layout_toEndOf="@+id/productName12"
                     android:gravity="center"
                     android:text="@string/dash"

@@ -1,12 +1,9 @@
 package com.example.nshopmainmenu;
 
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,7 +52,7 @@ public class PaymentPage extends AppCompatActivity {
 
 
     public void onReturnClick(View view) {
-        Intent intent = new Intent(this, ShoppingCart2.class);
+        Intent intent = new Intent(this, ShoppingCart.class);
         startActivity(intent);
     }
 }

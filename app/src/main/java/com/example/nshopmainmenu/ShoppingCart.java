@@ -8,123 +8,379 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-
 public class ShoppingCart extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    ShoppingCartAdapter2
-            adapter; // Create Object of the Adapter class
-    DatabaseReference reff;
+    TextView product_name, price, qty, total;
+    com.google.firebase.database.DatabaseReference reff;
+    private int a = 1;
 
-    /*ArrayList<Cart> products;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopping_cart);
 
-        /*// Lookup the recyclerview in activity layout
-        RecyclerView rvShoppingCart = (RecyclerView) findViewById(R.id.rvShoppingCart);
-
-        products = Cart.createProductsList(ConfirmOrder.numOrd);
-        // Create adapter passing in the sample user data
-        ShoppingCartAdapter adapter = new ShoppingCartAdapter(products);
-        // Attach the adapter to the recyclerview to populate items
-        rvShoppingCart.setAdapter(adapter);
-        // Set layout manager to position the items
-        rvShoppingCart.setLayoutManager(new LinearLayoutManager(this));*/
-
-        String num = String.valueOf(ConfirmOrder.numOrd);
-
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child("1");
-
-        recyclerView = findViewById(R.id.rvShoppingCart);
-
-        // To display the Recycler view linearly
-        recyclerView.setLayoutManager(
-                new LinearLayoutManager(this));
-
-        // It is a class provide by the FirebaseUI to make a
-        // query in the database to fetch appropriate data
-        FirebaseRecyclerOptions<shoppingcartproduct> options
-                = new FirebaseRecyclerOptions.Builder<shoppingcartproduct>()
-                .setQuery(reff, shoppingcartproduct.class)
-                .build();
-        // Connecting object of required Adapter class to
-        // the Adapter class itself
-        adapter = new ShoppingCartAdapter2(options);
-        // Connecting Adapter class with the Recycler view*/
-        recyclerView.setAdapter(adapter);
-    }
-
-    // Function to tell the app to start getting
-    // data from database on starting of the activity
-    @Override protected void onStart()
-    {
-        super.onStart();
-        adapter.startListening();
-    }
-
-    // Function to tell the app to stop getting
-    // data from database on stoping of the activity
-    @Override protected void onStop()
-    {
-        super.onStop();
-        adapter.stopListening();
-    }
 
 
-    /*public static class Cart {
-        private static String pQty;
-        private static String pPrice;
-        private String mName;
-        private String mPrice;
-        private String mQuantity;
+        while (a <= ConfirmOrder.numOrd) {
+            if (a == 1) {
 
-        public Cart(){}
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName1);
+                price = (TextView) findViewById(R.id.productPrice1);
+                qty = (TextView) findViewById(R.id.productQty1);
+                total = (TextView) findViewById(R.id.price);
 
-        public Cart(String name, String qty, String price) {
-            mName = name;
-            mPrice = price;
-            mQuantity = qty;
-        }
 
-        public String getName() {
-            return mName;
-        }
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
 
-        public String getPrice() {
-            return mPrice;
-        }
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
 
-        public String getQuantity() {
-            return mQuantity;
-        }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        public static ArrayList<Cart> createProductsList(int numOfProducts) {
-            ArrayList<Cart> products = new ArrayList<Cart>();
-
-            for (int i = 1; i <= numOfProducts; i++) {
-                pQty = String.valueOf(ConfirmOrder.scpQty[i]);
-                pPrice = String.valueOf(ConfirmOrder.scpPrice[i]);
-
-                products.add(new Cart("Product Name: " + ConfirmOrder.scpName[i], "Quantity: " + pQty, "Price: RM" + pPrice));
+                    }
+                });
             }
+            else if (a == 2) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName2);
+                price = (TextView) findViewById(R.id.productPrice2);
+                qty = (TextView) findViewById(R.id.productQty2);
+                total = (TextView) findViewById(R.id.price);
 
-            return products;
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 3) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName3);
+                price = (TextView) findViewById(R.id.productPrice3);
+                qty = (TextView) findViewById(R.id.productQty3);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 4) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName4);
+                price = (TextView) findViewById(R.id.productPrice4);
+                qty = (TextView) findViewById(R.id.productQty4);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 5) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName5);
+                price = (TextView) findViewById(R.id.productPrice5);
+                qty = (TextView) findViewById(R.id.productQty5);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 6) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName6);
+                price = (TextView) findViewById(R.id.productPrice6);
+                qty = (TextView) findViewById(R.id.productQty6);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 7) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName7);
+                price = (TextView) findViewById(R.id.productPrice7);
+                qty = (TextView) findViewById(R.id.productQty7);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 8) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName8);
+                price = (TextView) findViewById(R.id.productPrice8);
+                qty = (TextView) findViewById(R.id.productQty8);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 9) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName9);
+                price = (TextView) findViewById(R.id.productPrice9);
+                qty = (TextView) findViewById(R.id.productQty9);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 10) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName10);
+                price = (TextView) findViewById(R.id.productPrice10);
+                qty = (TextView) findViewById(R.id.productQty10);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 11) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName11);
+                price = (TextView) findViewById(R.id.productPrice11);
+                qty = (TextView) findViewById(R.id.productQty11);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            else if (a == 12) {
+                String x = String.valueOf(a);
+                product_name = (TextView) findViewById(R.id.productName12);
+                price = (TextView) findViewById(R.id.productPrice12);
+                qty = (TextView) findViewById(R.id.productQty12);
+                total = (TextView) findViewById(R.id.price);
+
+
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(x);
+                reff.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String pName = dataSnapshot.child("Product Name").getValue().toString();
+                        String pPrice = dataSnapshot.child("Price").getValue().toString();
+                        String pQty = dataSnapshot.child("Quantity").getValue().toString();
+                        product_name.setText(pName);
+                        price.setText(pPrice);
+                        qty.setText(pQty);
+
+                        String pTotal = dataSnapshot.child("Current Total").getValue().toString();
+                        total.setText(pTotal);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            a++;
         }
-    }*/
+    }
 
 
     public void onReturnClick(View view) {
@@ -137,4 +393,8 @@ public class ShoppingCart extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onCheckoutClick(View view) {
+        Intent intent = new Intent(this, PaymentPage.class);
+        startActivity(intent);
+    }
 }

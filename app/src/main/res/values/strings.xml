@@ -63,7 +63,8 @@
     <string name="price_rm">Price(RM)</string>
     <string name="dash">-</string>
     <string name="check_out">Check Out</string>
-    <string name="total_price_label">Total Price:</string>
+    <string name="total_price_label">Total Price: RM</string>
+    <string name="total_price_label_no_unit">Total Price: </string>
     <string name="pn" type="id">productName</string>
     <string name="pd" type="id">productPrice</string>
     <string name="pq" type="id">productQty</string>

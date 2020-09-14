@@ -69,7 +69,7 @@ public class ProductPurpleMask extends AppCompatActivity {
     }
 
     public void onAddToCartClick(View view) {
-        total = qtyNum * 11.00;
+        total = qtyNum * 13.00;
         ConfirmOrder.prodQty = qtyNum;
         ConfirmOrder.prodName = name;
         ConfirmOrder.prodTotalPrice = total;
