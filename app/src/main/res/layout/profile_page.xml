@@ -168,7 +168,8 @@
                 android:background="#000000"
                 android:text="@string/purchase_history_btn"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:onClick="onPurchaseHistoryClick"/>
 
             <Button
                 android:id="@+id/contact_us"

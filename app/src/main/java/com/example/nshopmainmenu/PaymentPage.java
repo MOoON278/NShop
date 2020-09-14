@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class PaymentPage extends AppCompatActivity {
+
+    static double[] allTotal2 = {};
+    static int orderID = 100000;
+    static int numOfPayment = 0;
 
     private TextView total, holder_name, bank_num;
     private com.google.firebase.database.DatabaseReference reff;
@@ -50,6 +55,21 @@ public class PaymentPage extends AppCompatActivity {
 
     }
 
+    public void onConfirmClick(View view) {
+        String oID = String.valueOf(orderID);
+        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(oID);
+        reff.child("Total Price").setValue(ConfirmOrder.allTotal);
+        orderID++;
+        numOfPayment++;
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        ConfirmOrder.numOrd = 0;
+        ConfirmOrder.allTotal = 0;
+        //ShoppingCart inst = new ShoppingCart();
+        //inst.resetShoppingCart();
+        Toast toast = Toast.makeText(this, R.string.payment_made,Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
     public void onReturnClick(View view) {
         Intent intent = new Intent(this, ShoppingCart.class);

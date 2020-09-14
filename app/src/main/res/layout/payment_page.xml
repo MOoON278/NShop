@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="280dp"
-        android:text="Make sure the below information are correct."
+        android:text="@string/make_sure_the_below_information_are_correct"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/bankFrame"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="220dp"
-        android:text="Bank Account Holder:"
+        android:text="@string/bank_account_holder_label"
         android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/bankFrame"
@@ -109,12 +109,12 @@
         app:layout_constraintTop_toBottomOf="@+id/bankAccHolder" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/bankAccNumLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="175dp"
-        android:text="Bank Account Number:"
+        android:text="@string/bank_account_number_label"
         android:textColor="#000000"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/bankFrame"
@@ -134,14 +134,15 @@
         app:layout_constraintBottom_toBottomOf="@+id/bankFrame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/bankAccNumLabel" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/confirm"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginBottom="32dp"
         android:background="#000000"
+        android:onClick="onConfirmClick"
         android:text="@string/confirm"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
@@ -150,12 +151,13 @@
         app:layout_constraintStart_toStartOf="@+id/bankFrame" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/back"
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginBottom="24dp"
         android:background="#000000"
-        android:text="Return"
+        android:text="@string/return_text"
+        android:onClick="onReturnClick"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

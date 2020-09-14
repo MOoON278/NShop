@@ -103,6 +103,11 @@ public class ProfilePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onPurchaseHistoryClick(View view) {
+        Intent intent = new Intent(this, PurchaseHistory.class);
+        startActivity(intent);
+    }
+
     public void showMsg(View view){
         Toast toast = Toast.makeText(this, R.string.profile_page_message,Toast.LENGTH_SHORT);
 

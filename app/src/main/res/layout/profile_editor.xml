@@ -186,7 +186,7 @@
                 app:layout_constraintBaseline_toBaselineOf="@id/username" />
 
             <EditText
-                android:id="@+id/address"
+                android:id="@+id/addressLabel1"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

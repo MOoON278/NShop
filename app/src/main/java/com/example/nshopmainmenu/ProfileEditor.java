@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -51,7 +50,7 @@ public class ProfileEditor extends AppCompatActivity {
         user_name = (EditText) findViewById (R.id.username);
         user_email = (EditText) findViewById (R.id.email);
         user_postal = (EditText) findViewById (R.id.postal);
-        user_address = (EditText) findViewById (R.id.address);
+        user_address = (EditText) findViewById (R.id.address1);
         radio_pick = (RadioGroup) findViewById(R.id.radio);
 
 

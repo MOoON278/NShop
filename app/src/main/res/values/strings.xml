@@ -68,4 +68,11 @@
     <string name="pn" type="id">productName</string>
     <string name="pd" type="id">productPrice</string>
     <string name="pq" type="id">productQty</string>
+    <string name="return_text">Return</string>
+    <string name="payment_made">Payment Made!</string>
+    <string name="delivery_address">Delivery Address:</string>
+    <string name="order_id">Order ID:</string>
+    <string name="bank_account_number_label">Bank Account Number:</string>
+    <string name="bank_account_holder_label">Bank Account Holder:</string>
+    <string name="make_sure_the_below_information_are_correct">Make sure the below information are correct.</string>
 </resources>

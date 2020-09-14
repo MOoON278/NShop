@@ -62,13 +62,17 @@ public class ConfirmOrder extends AppCompatActivity {
         }
     }
 
+
+
     public void onConfirmClick(View view){
+
 
         numOrd++;
 
         numberOfOrder = String.valueOf(numOrd);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(numberOfOrder);
+        String orderId = String.valueOf(PaymentPage.orderID);
+        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(orderId).child(numberOfOrder);
         reff.child("Price").setValue(prodTotalPrice);
         reff.child("Product Name").setValue(prodName);
         reff.child("Quantity").setValue(prodQty);
