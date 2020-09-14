@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,6 +23,9 @@ public class ProfilePage extends AppCompatActivity {
     TextView user_name, user_email;
     com.google.firebase.database.DatabaseReference reff;
 
+    Button btnLogout;
+    FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,9 @@ public class ProfilePage extends AppCompatActivity {
         user_name = (TextView) findViewById (R.id.username);
         user_email = (TextView) findViewById (R.id.email);
 
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
+        String userNum = String.valueOf(UserInformation.cusNum);
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(userNum);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
@@ -79,6 +86,21 @@ public class ProfilePage extends AppCompatActivity {
             ImageView imgGender = (ImageView) findViewById(R.id.gender);
             imgGender.setImageResource(R.drawable.female);
         }*/
+
+        btnLogout = findViewById(R.id.buttonLogout);
+
+        btnLogout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                ConfirmOrder.numOrd = 0;
+                PaymentPage.numOfPayment = 0;
+                PaymentPage.orderID = 100000;
+                FirebaseAuth.getInstance().signOut();
+                Intent toMain = new Intent(ProfilePage.this,MainActivity.class);
+                startActivity(toMain);
+            }
+        });
+
 
     }
 

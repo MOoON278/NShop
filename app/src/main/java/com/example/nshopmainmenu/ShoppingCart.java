@@ -52,7 +52,7 @@ public class ShoppingCart extends AppCompatActivity {
                 qty1 = (TextView) findViewById(R.id.productQty1);
                 total = (TextView) findViewById(R.id.price);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -83,7 +83,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -112,7 +112,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -141,7 +141,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -170,7 +170,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -199,7 +199,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -228,7 +228,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -257,7 +257,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -286,7 +286,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -315,7 +315,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -344,7 +344,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -373,7 +373,7 @@ public class ShoppingCart extends AppCompatActivity {
                 total = (TextView) findViewById(R.id.price);
 
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(ordNum).child(x);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

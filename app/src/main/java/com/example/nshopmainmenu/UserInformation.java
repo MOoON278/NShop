@@ -27,13 +27,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ProfileEditor extends AppCompatActivity {
+public class UserInformation extends AppCompatActivity {
 
     TextView user_name, user_email, user_postal, user_address, user_bankNum, user_bankHolder;
     RadioGroup radio_pick;
     RadioButton picked1, picked2;
     private DatabaseReference reff;
-
+    private int x;
+    static String cID;
+    static int cusNum;
 
 
     public static final int GET_FROM_GALLERY = 3;
@@ -45,7 +47,7 @@ public class ProfileEditor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile_editor);
+        setContentView(R.layout.user_information);
 
         user_name = (EditText) findViewById (R.id.username);
         user_email = (EditText) findViewById (R.id.email);
@@ -87,7 +89,7 @@ public class ProfileEditor extends AppCompatActivity {
 
         if (imageSetChecker == 1) {
             ImageView userProfilePic = (ImageView) findViewById(R.id.image);
-            userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+            userProfilePic.setImageBitmap(UserInformation.savedUserProfile);
         }
         else if (imageSetChecker == 0){
             ImageView userProfilePic = (ImageView) findViewById(R.id.image);
@@ -96,6 +98,8 @@ public class ProfileEditor extends AppCompatActivity {
     }
 
     public void onSaveClick(View view) {
+        cusNum++;
+
         reff = FirebaseDatabase.getInstance().getReference().child("Users").child("1");
 
         String name = user_name.getText().toString();
@@ -111,6 +115,7 @@ public class ProfileEditor extends AppCompatActivity {
         reff.child("Address").setValue(address);
         reff.child("Bank Acc Number").setValue(bNum);
         reff.child("Bank Acc Holder").setValue(bName);
+        reff.child("User ID").setValue(cID);
 
         radio_pick = (RadioGroup) findViewById(R.id.radio);
         picked1 = (RadioButton) findViewById(R.id.Male);
@@ -140,17 +145,17 @@ public class ProfileEditor extends AppCompatActivity {
     }
 
     public void onReturnClick(View view) {
-        Intent intent = new Intent(this, ProfilePage.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
 
     public void onUploadClick(View view) {
-        startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
+        startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
     }
 
     public void changePic() {
         ImageView userProfilePic = (ImageView) findViewById(R.id.image);
-        userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
+        userProfilePic.setImageBitmap(UserInformation.savedUserProfile);
     }
 
     @Override

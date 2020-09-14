@@ -31,6 +31,11 @@
         <activity android:name=".ShoppingCart"></activity>
         <activity android:name=".PaymentPage"></activity>
         <activity android:name=".PurchaseHistory"></activity>
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".VerificationEmail"></activity>
+        <activity android:name=".UserInformation"></activity>
+        <activity android:name=".Menu"></activity>
+        <activity android:name=".ForgotPassword"></activity>
     </application>
 
 </manifest>

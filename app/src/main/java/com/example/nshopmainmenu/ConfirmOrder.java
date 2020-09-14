@@ -6,16 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.lang.reflect.Array;
 
 public class ConfirmOrder extends AppCompatActivity {
 
@@ -72,7 +66,7 @@ public class ConfirmOrder extends AppCompatActivity {
         numberOfOrder = String.valueOf(numOrd);
 
         String orderId = String.valueOf(PaymentPage.orderID);
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(orderId).child(numberOfOrder);
+        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(orderId).child(numberOfOrder);
         reff.child("Price").setValue(prodTotalPrice);
         reff.child("Product Name").setValue(prodName);
         reff.child("Quantity").setValue(prodQty);

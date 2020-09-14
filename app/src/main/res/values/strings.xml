@@ -75,4 +75,19 @@
     <string name="bank_account_number_label">Bank Account Number:</string>
     <string name="bank_account_holder_label">Bank Account Holder:</string>
     <string name="make_sure_the_below_information_are_correct">Make sure the below information are correct.</string>
+    <string name="enter_phone_number_hint">Phone Number</string>
+    <string name="enter_password_hint">Password</string>
+    <string name="login_text">LOGIN</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="forgot_password_text">Forgot password</string>
+    <string name="enter_email_hint">Email Address</string>
+    <string name="enter_confirmed_password_hint">Confirmed Password</string>
+    <string name="next_text">NEXT</string>
+    <string name="enter_username_hint">Username</string>
+    <string name="enter_gender_hint">Gender</string>
+    <string name="enter_birth_date_hint">Birthdate</string>
+    <string name="enter_address_1_hint">Address 1</string>
+    <string name="enter_address_2_hint">Address 2</string>
+    <string name="done_text">DONE</string>
+    <string name="verification_email">We have sent an email to your email address. Please go to your email address and click on the link to change your password.</string>
 </resources>

@@ -57,7 +57,7 @@ public class PaymentPage extends AppCompatActivity {
 
     public void onConfirmClick(View view) {
         String oID = String.valueOf(orderID);
-        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("C0001").child(oID);
+        reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(UserInformation.cID).child(oID);
         reff.child("Total Price").setValue(ConfirmOrder.allTotal);
         orderID++;
         numOfPayment++;
