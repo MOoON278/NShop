@@ -56,7 +56,7 @@ public class SignUp extends AppCompatActivity {
                                 Toast.makeText(SignUp.this, "Sign Up Unsuccessful, Please try again",Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                startActivity(new Intent(SignUp.this,Home.class));
+                                startActivity(new Intent(SignUp.this,MainMenuPage.class));
                             }
                         }
                     });

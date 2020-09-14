@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity<FirebaseAuth> extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     EditText emailId, password;
     Button btnLogIn;
@@ -43,7 +43,7 @@ public class MainActivity<FirebaseAuth> extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if(mFirebaseUser != null ){
                     Toast.makeText(MainActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
-                    Intent logIn = new Intent(MainActivity.this,Home.class);
+                    Intent logIn = new Intent(MainActivity.this,MainMenuPage.class);
                     startActivity(logIn);
                 }
                 else{
@@ -76,7 +76,7 @@ public class MainActivity<FirebaseAuth> extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Login Error, Please login again",Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Intent toHome = new Intent(MainActivity.this,Home.class);
+                                Intent toHome = new Intent(MainActivity.this,MainMenuPage.class);
                                 startActivity(toHome);
                             }
                         }
