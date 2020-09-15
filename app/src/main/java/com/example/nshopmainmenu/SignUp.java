@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
 
+    //the signup screen which requires the user to input email and password.
+
 
     EditText emailId, password, confirmedPassword;
     Button btnSignUp;
@@ -60,7 +62,9 @@ public class SignUp extends AppCompatActivity {
                             }
                             else {
                                 startActivity(new Intent(SignUp.this, UserInformation.class));
-                                cusNum++;
+                                cusNum++; //As same from login page, we use this counter to determine which user information should the Firebase fetch for the user.
+                                //If over 3 then will crash as currently the Firebase only have a maximum of 3 spaces allowed to store information.
+                                //If you login /sign up on the third time, just reset the app.
                             }
                         }
                     });

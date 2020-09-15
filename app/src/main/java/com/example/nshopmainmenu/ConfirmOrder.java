@@ -14,12 +14,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ConfirmOrder extends AppCompatActivity {
 
-    private DatabaseReference reff;
+    //This page is to ask user to confirm about the orders they have made from the products page.
 
-    static String prodName;
-    static int prodQty;
-    static double prodTotalPrice;
-    static double allTotal;
+    private DatabaseReference reff; //Reference to Firebase
+
+    static String prodName;//Get the name from  ProductBlackMask, ProductBlueMask and ProductPurpleMask (depending on what user ordered) and show it.
+    static int prodQty;// Same as above.
+    static double prodTotalPrice; // Also same as above except its calculated (12 Black Mask * RM15 each)
+    static double allTotal; //Each time the customer order product from ProductBlackMask, ProductBlueMask and ProductPurpleMask, the all total will be added on with theirs value.
     static int numOrd;
 
     private TextView name;
@@ -62,9 +64,9 @@ public class ConfirmOrder extends AppCompatActivity {
     public void onConfirmClick(View view){
 
 
-        numOrd++;
-        PaymentPage.orderID = PaymentPage.base + PaymentPage.count;
-        numberOfOrder = String.valueOf(numOrd);
+        numOrd++; //number of order, used to add the child of Firebase with this value.
+        PaymentPage.orderID = PaymentPage.base + PaymentPage.count; //Create the orderID 100000 and so on.
+        numberOfOrder = String.valueOf(numOrd); //change numOrd to string value so Firebase can use it.
 
         String orderId = String.valueOf(PaymentPage.orderID);
         reff = FirebaseDatabase.getInstance().getReference();

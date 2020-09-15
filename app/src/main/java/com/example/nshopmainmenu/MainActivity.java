@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
+    //The login page which allows user to pick their ways to get into the menu.
+
     EditText emailId, password;
     Button btnLogIn;
     TextView tvSignUp, tvForgotPassword;
@@ -73,7 +75,14 @@ public class MainActivity extends AppCompatActivity {
                             else{
                                 Intent toHome = new Intent(MainActivity.this,Menu.class);
                                 startActivity(toHome);
-                                SignUp.cusNum++;
+                                SignUp.cusNum++; //When login successfully, it will add a value to cusNum (to 1) (Used as counter)
+                                //It is used to determine which user information should the Firebase fetch for the user.
+                                //But due to Firebase cannot create child with variable? The code was scrapped and change to hard coded one.
+                                //In the Firebase database, we have allowed 3 user spaces.
+                                //First login will use the data stored in the 1 child in database which is aloha chan.
+                                //After logout and login again will use second stored data which is MOoON2.
+                                //Third one is empty, allowing the user to create account with it.
+                                //But still can sign up in first login tho, it only overwrites the first user's data.
                             }
                         }
                     });

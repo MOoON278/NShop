@@ -69,13 +69,13 @@ public class ProductBlackMask extends AppCompatActivity {
     }
 
     public void onReturnClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
 
     public void onAddToCartClick(View view) {
         total = qtyNum * 15.00;
-        ConfirmOrder.prodQty = qtyNum;
+        ConfirmOrder.prodQty = qtyNum; //Add the values to the Confirm Order
         ConfirmOrder.prodName = name;
         ConfirmOrder.prodTotalPrice = total;
         ConfirmOrder.allTotal += total;

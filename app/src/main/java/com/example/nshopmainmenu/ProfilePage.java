@@ -21,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfilePage extends AppCompatActivity {
 
+    //Shows data from the user account according to cusNum (1, 2 or 3) from Firebase.
+
     TextView user_name, user_email;
     com.google.firebase.database.DatabaseReference reff;
 
@@ -88,11 +90,12 @@ public class ProfilePage extends AppCompatActivity {
             imgGender.setImageResource(R.drawable.female);
         }*/
 
-        btnLogout = findViewById(R.id.buttonLogout);
+        btnLogout = findViewById(R.id.buttonLogout); //This is for logout button.
 
         btnLogout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                //When logout it will reset the counters for shopping cart, order number and ID to ensure next user will not see last user's shopping cart and purchase history data.
                 ConfirmOrder.numOrd = 0;
                 PaymentPage.numOfPayment = 0;
                 PaymentPage.orderID = 100000;

@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 public class Menu extends AppCompatActivity {
 
+    //The menu that shows three hard coded products.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

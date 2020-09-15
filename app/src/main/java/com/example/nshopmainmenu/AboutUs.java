@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AboutUs extends AppCompatActivity {
 
+    //When onCreate the page, it will show contents of about us from strings stored in strings.xml
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_us);

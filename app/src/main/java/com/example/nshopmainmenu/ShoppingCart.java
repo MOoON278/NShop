@@ -17,6 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ShoppingCart extends AppCompatActivity {
 
+    //Same situation as Purchase History >.< the maximum show amount is 12 as it is hard coded.
+
     TextView product_name1, price1, qty1, total;
     TextView product_name2, price2, qty2;
     TextView product_name3, price3, qty3;
@@ -53,7 +55,7 @@ public class ShoppingCart extends AppCompatActivity {
                 qty1 = (TextView) findViewById(R.id.productQty1);
                 total = (TextView) findViewById(R.id.price);
                 String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(x);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(x); //Read data based on order ID and the counter x.
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

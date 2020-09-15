@@ -30,6 +30,9 @@ import java.io.IOException;
 
 public class UserInformation extends AppCompatActivity {
 
+    //Same as the Profile Editor but this time it write data directly to the user account according to the cusNum.
+    //This page only accessible with Sign Up as creating a new account need new data information of the user.
+
     TextView user_name, user_email, user_postal, user_address, user_bankNum, user_bankHolder;
     RadioGroup radio_pick;
     RadioButton picked1, picked2;

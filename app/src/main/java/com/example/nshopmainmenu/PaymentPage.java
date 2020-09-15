@@ -16,11 +16,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PaymentPage extends AppCompatActivity {
 
+    //Shows the total price from shopping cart and the bank acc num and name.
+
     static double[] allTotal2 = {};
-    static int orderID;
+    static int orderID; //To create a code for creating child for Firebase
     static int base = 100000;
     static int count = 0;
-    static int numOfPayment;
+    static int numOfPayment; //counter for payment number, each time confirm a payment, the number will +1.
 
     private TextView total, holder_name, bank_num;
     private com.google.firebase.database.DatabaseReference reff;
@@ -38,7 +40,7 @@ public class PaymentPage extends AppCompatActivity {
         total.setText(atotal);
 
         String ocNum = String.valueOf(SignUp.cusNum);
-        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
+        reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum); //Read data based on cusNum from Sign Up
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
@@ -61,7 +63,7 @@ public class PaymentPage extends AppCompatActivity {
     public void onConfirmClick(View view) {
         String oID = String.valueOf(orderID);
         String ocNum = String.valueOf(SignUp.cusNum);
-        count++;
+        count++;//Increase count to form a new id (100001)
         reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ocNum).child(oID);
         reff.child("Total Price").setValue(ConfirmOrder.allTotal);
 

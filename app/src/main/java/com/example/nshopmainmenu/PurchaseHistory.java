@@ -15,6 +15,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PurchaseHistory extends AppCompatActivity {
 
+    //A very long page as the places provided in the layout are hard coded, which means that is only maximum of 12 history can be shown.
+    //We were supposed to use RecyclerView to do this but somehow we cannot fetch data and show in RecyclerView, so the only other solution due to time constraint is only hard coding it.
+    //But the read database thing is still fully implemented though.
+
     com.google.firebase.database.DatabaseReference reff;
 
     TextView address1, total1, orderID1;
@@ -46,7 +50,7 @@ public class PurchaseHistory extends AppCompatActivity {
 
                 String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum); //Read data according to the cusNum (1, 2 and 3).
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

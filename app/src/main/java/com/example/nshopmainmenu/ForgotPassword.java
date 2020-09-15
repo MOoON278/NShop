@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPassword extends AppCompatActivity {
 
+    //Allow user to change their password with using their email.
+
     EditText userEmail;
     Button btnForgot;
     FirebaseAuth firebaseAuth;

@@ -10,6 +10,8 @@ import android.widget.Button;
 
 public class VerificationEmail extends AppCompatActivity {
 
+    //As shown in the presentation, this will send a reset password email to the user's email address.
+
     Button btnVerification;
 
     @Override

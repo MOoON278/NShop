@@ -29,6 +29,9 @@ import java.io.IOException;
 
 public class ProfileEditor extends AppCompatActivity {
 
+    //Allow user to write data information to the current user account based on the Firebase, it is basically same as User Information except this is accessed after log in.
+    //Naturally, the user account now should be the "1" in Firebase as it is according to the cusNum when logged in / sign up.
+
     TextView user_name, user_email, user_postal, user_address, user_bankNum, user_bankHolder;
     RadioGroup radio_pick;
     RadioButton picked1, picked2;
@@ -46,6 +49,8 @@ public class ProfileEditor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_editor);
+
+        //Show the original values first for easier edit.
 
         user_name = (EditText) findViewById (R.id.username);
         user_email = (EditText) findViewById (R.id.email);
@@ -100,7 +105,7 @@ public class ProfileEditor extends AppCompatActivity {
 
     public void onSaveClick(View view) {
         String cusNum1 = String.valueOf(UserInformation.cusNum);
-        String ocNum = String.valueOf(SignUp.cusNum);
+        String ocNum = String.valueOf(SignUp.cusNum); //Based on the cusNum (1, 2 or 3) more than 3 will crash as it has only three spaces for user
         reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
 
         String name = user_name.getText().toString();
@@ -157,6 +162,8 @@ public class ProfileEditor extends AppCompatActivity {
         ImageView userProfilePic = (ImageView) findViewById(R.id.image);
         userProfilePic.setImageBitmap(ProfileEditor.savedUserProfile);
     }
+
+    //Add photo does not connect to the Firebase
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
