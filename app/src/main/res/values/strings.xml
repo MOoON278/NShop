@@ -92,4 +92,5 @@
     <string name="verification_email">We have sent an email to your email address. Please go to your email address and click on the link to change your password.</string>
     <string name="bank_account_number">Bank Account Number</string>
     <string name="bank_account_holder">Bank Account Holder Name</string>
+    <string name="logout">logout</string>
 </resources>

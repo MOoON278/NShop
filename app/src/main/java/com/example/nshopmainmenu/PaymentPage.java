@@ -17,8 +17,10 @@ import com.google.firebase.database.ValueEventListener;
 public class PaymentPage extends AppCompatActivity {
 
     static double[] allTotal2 = {};
-    static int orderID = 100000;
-    static int numOfPayment = 0;
+    static int orderID;
+    static int base = 100000;
+    static int count = 0;
+    static int numOfPayment;
 
     private TextView total, holder_name, bank_num;
     private com.google.firebase.database.DatabaseReference reff;
@@ -59,9 +61,10 @@ public class PaymentPage extends AppCompatActivity {
     public void onConfirmClick(View view) {
         String oID = String.valueOf(orderID);
         String ocNum = String.valueOf(SignUp.cusNum);
+        count++;
         reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ocNum).child(oID);
         reff.child("Total Price").setValue(ConfirmOrder.allTotal);
-        orderID++;
+
         numOfPayment++;
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);

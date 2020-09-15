@@ -63,7 +63,7 @@ public class ConfirmOrder extends AppCompatActivity {
 
 
         numOrd++;
-
+        PaymentPage.orderID = PaymentPage.base + PaymentPage.count;
         numberOfOrder = String.valueOf(numOrd);
 
         String orderId = String.valueOf(PaymentPage.orderID);

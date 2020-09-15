@@ -44,9 +44,9 @@ public class PurchaseHistory extends AppCompatActivity {
                 orderID1 = (TextView) findViewById(R.id.orderID1);
                 orderID1.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -59,9 +59,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100000");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -76,15 +76,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             } else if (a == 2) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address2 = (TextView) findViewById(R.id.address2);
                 total2 = (TextView) findViewById(R.id.price2);
                 orderID2 = (TextView) findViewById(R.id.orderID2);
                 orderID2.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -97,9 +96,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100001");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -115,15 +114,14 @@ public class PurchaseHistory extends AppCompatActivity {
 
             }else if (a == 3) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address3 = (TextView) findViewById(R.id.address3);
                 total3 = (TextView) findViewById(R.id.price3);
                 orderID3 = (TextView) findViewById(R.id.orderID3);
                 orderID3.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -136,9 +134,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100002");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -153,15 +151,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 4) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address4 = (TextView) findViewById(R.id.address4);
                 total4 = (TextView) findViewById(R.id.price4);
                 orderID4 = (TextView) findViewById(R.id.orderID4);
                 orderID4.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -174,9 +171,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100003");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -191,15 +188,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 5) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address5 = (TextView) findViewById(R.id.address5);
                 orderID5 = (TextView) findViewById(R.id.orderID5);
                 total5 = (TextView) findViewById(R.id.price5);
                 orderID5.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -212,9 +208,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100004");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -229,15 +225,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 6) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address6 = (TextView) findViewById(R.id.address6);
                 orderID6 = (TextView) findViewById(R.id.orderID6);
                 total6 = (TextView) findViewById(R.id.price6);
                 orderID6.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -250,9 +245,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100005");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -267,15 +262,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 7) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address7 = (TextView) findViewById(R.id.address7);
                 orderID7 = (TextView) findViewById(R.id.orderID7);
                 total7 = (TextView) findViewById(R.id.price7);
                 orderID7.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -288,9 +282,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100006");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -305,15 +299,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 8) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address8 = (TextView) findViewById(R.id.address8);
                 orderID8 = (TextView) findViewById(R.id.orderID8);
                 total8 = (TextView) findViewById(R.id.price8);
                 orderID8.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -326,9 +319,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100007");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -343,16 +336,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 9) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address9 = (TextView) findViewById(R.id.address9);
                 orderID9 = (TextView) findViewById(R.id.orderID9);
                 total9 = (TextView) findViewById(R.id.price9);
                 orderID9.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -365,9 +356,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100008");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -382,15 +373,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 10) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address10 = (TextView) findViewById(R.id.address10);
                 orderID10 = (TextView) findViewById(R.id.orderID10);
                 total10 = (TextView) findViewById(R.id.price10);
                 orderID10.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -403,9 +393,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100009");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -420,15 +410,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 11) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address11 = (TextView) findViewById(R.id.address11);
                 orderID11 = (TextView) findViewById(R.id.orderID11);
                 total11 = (TextView) findViewById(R.id.price11);
                 orderID11.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -441,9 +430,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100010");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -458,15 +447,14 @@ public class PurchaseHistory extends AppCompatActivity {
                 });
             }else if (a == 12) {
                 String id = String.valueOf(PaymentPage.orderID);
-                String total = String.valueOf(PaymentPage.allTotal2[a--]);
                 address12 = (TextView) findViewById(R.id.address12);
                 orderID12 = (TextView) findViewById(R.id.orderID12);
                 total12 = (TextView) findViewById(R.id.price12);
                 orderID12.setText(id);
 
-                String userNum = String.valueOf(UserInformation.cusNum);
+                String ocNum = String.valueOf(SignUp.cusNum);
 
-                reff = FirebaseDatabase.getInstance().getReference().child("Users");
+                reff = FirebaseDatabase.getInstance().getReference().child("Users").child(ocNum);
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -479,9 +467,9 @@ public class PurchaseHistory extends AppCompatActivity {
 
                     }
                 });
-                String oID = String.valueOf(100000 + a--);
-                String ordNum = String.valueOf(PaymentPage.orderID);
-                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child(ordNum).child(oID);
+                String oID = String.valueOf(PaymentPage.orderID);
+                String ordNum = String.valueOf(SignUp.cusNum);
+                reff = FirebaseDatabase.getInstance().getReference().child("Shopping Cart").child("1").child("100011");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -504,7 +492,7 @@ public class PurchaseHistory extends AppCompatActivity {
     }
 
     public void onHomeClick(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
 }
